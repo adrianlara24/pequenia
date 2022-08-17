@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
   const [time, setTime] = useState({ d: 0, h: 0, m: 0, s: 0 });
-  const meta = new Date("2022-09-15 00:00:00").getTime();
+  const meta = new Date("2022-09-20 00:00:00").getTime();
 
   useEffect(() => {
     setInterval(() => {
@@ -22,6 +22,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <div className={styles.hero}>
         <h1 className={styles.title}>MUY PRONTO</h1>
+        <div className={styles.fecha}>20 de Septiembre del 2022</div>
         <div className={styles.time}>
           <div className={styles.part}>
             <div className={styles.value}>{time.d}</div>
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
       </div>
       <div className={styles.mp}>
         <img src="/mp.png" alt="Mercado Pago" />
-        EMILIANO.LARA.2022
+        MiPequenaBelen
       </div>
     </div>
   );

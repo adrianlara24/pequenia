@@ -31,6 +31,12 @@
   @apply text-6xl font-bold text-white text-center;
 }
 
+.fecha {
+  @apply flex items-center justify-center;
+  @apply bg-white px-5 py-2 rounded-full;
+  @apply text-base font-bold text-blue-700;
+}
+
 .time {
   @apply flex justify-center gap-16 w-full;
 }
@@ -49,7 +55,7 @@
 
 .mp {
   @apply flex items-center justify-between gap-6 rounded px-4 py-0;
-  @apply text-white font-bold text-base uppercase;
+  @apply text-white font-bold text-base;
   height: 60px;
   background-color: #01b1ea;
   font-family: sans-serif;
