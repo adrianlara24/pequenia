@@ -29,16 +29,28 @@
 
 .title {
   @apply text-6xl font-bold text-white text-center;
+  
+  @media (max-width: 800px) {
+    @apply text-4xl;
+  }
 }
 
 .fecha {
   @apply flex items-center justify-center;
   @apply bg-white px-5 py-2 rounded-full;
   @apply text-base font-bold text-blue-700;
+  
+  @media (max-width: 800px) {
+    @apply text-xs;
+  }
 }
 
 .time {
   @apply flex justify-center gap-16 w-full;
+  
+  @media (max-width: 800px) {
+    @apply gap-2;
+  }
 }
 
 .part {
@@ -47,10 +59,18 @@
 
 .value {
   @apply text-9xl text-center font-bold text-gray-100;
+  
+  @media (max-width: 800px) {
+    @apply text-2xl;
+  }
 }
 
 .label {
   @apply text-2xl text-center font-bold text-white;
+  
+  @media (max-width: 800px) {
+    @apply text-xs;
+  }
 }
 
 .mp {
