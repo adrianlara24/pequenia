@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
-        <h1 className={styles.title}>MUY PRONTO</h1>
+        <h1 className={styles.title}>MUY PRONTO!!!</h1>
         <div className={styles.fecha}>20 de Septiembre del 2022</div>
         <div className={styles.time}>
           <div className={styles.part}>
