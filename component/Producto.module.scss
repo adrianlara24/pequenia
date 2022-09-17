@@ -1,0 +1,20 @@
+.producto {
+  @apply flex flex-col gap-2 bg-white w-28 transition-all;
+
+  &:hover {
+    @apply shadow-lg;
+  }
+}
+
+.fotos {
+  @apply w-full;
+  min-height: 80px;
+}
+
+.nombre {
+  @apply text-lg text-gray-800;
+}
+
+.precio {
+  @apply text-sm text-green-600 font-bold;
+}
