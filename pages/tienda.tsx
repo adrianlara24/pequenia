@@ -27,7 +27,7 @@ export async function getServerSideProps() {
   const data = result.items.map((x) => x.fields) as any[];
   const items = data.map((x) => ({
     ...x,
-    fotos: x.fotos?.map((y: any) => y.fields.file.url) ?? [],
+    fotos: x.fotos?.map((y: any) => y.fields?.file?.url) ?? [],
   }));
 
   return {
