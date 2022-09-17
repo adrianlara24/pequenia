@@ -1,5 +1,6 @@
 .producto {
-  @apply flex flex-col gap-2 bg-white w-28 transition-all;
+  @apply flex flex-col bg-gray-50 transition-all overflow-hidden rounded;
+  border: 1px solid #eaeaea;
 
   &:hover {
     @apply shadow-lg;
@@ -8,13 +9,26 @@
 
 .fotos {
   @apply w-full;
-  min-height: 80px;
+}
+
+.contenido {
+  @apply flex flex-col gap-1 p-2;
 }
 
 .nombre {
-  @apply text-lg text-gray-800;
+  @apply text-2xl text-gray-800;
 }
 
 .precio {
-  @apply text-sm text-green-600 font-bold;
+  @apply text-lg text-green-600 font-bold;
+}
+
+.link {
+  @apply flex items-center justify-center py-1 mt-6 mb-2 mx-4 rounded-full;
+  @apply text-purple-500 text-base font-bold uppercase;
+  @apply border-2 border-purple-600;
+
+  &:hover {
+    @apply text-white bg-purple-500;
+  }
 }
