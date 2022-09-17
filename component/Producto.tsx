@@ -1,21 +1,24 @@
+import Image from "next/image";
 import css from "./Producto.module.scss";
 
 const Producto = ({ data }: any) => {
-  //   {data.fotos.map((f: any, index: number) => {
-  //     return <img key={index} src={f} alt="" />;
-  //   })}
-
   console.log(data);
 
   return (
     <div className={css.producto}>
       <div className={css.fotos}>
-        <img src={data.fotos[0]} alt="" />
+        <Image
+          src={"https:" + data.fotos[0]}
+          layout="responsive"
+          width={200}
+          height={200}
+        />
       </div>
-      <div className={css.nombre}> {data.nombre} </div>
-      <div className={css.precio}> {data.precio} </div>
-      <div className={css.descripcion}> {data.descripcion} </div>
-      <a className={css.boton} href={data.link} target="_blank">
+      <div className={css.contenido}>
+        <div className={css.nombre}> {data.nombre} </div>
+        <div className={css.precio}> ${data.precio} </div>
+      </div>
+      <a className={css.link} href={data.link} target="_blank">
         Comprar
       </a>
     </div>

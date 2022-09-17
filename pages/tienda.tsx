@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import * as contentful from "contentful";
+import css from "./tienda.module.scss";
 import Producto from "../component/Producto";
 
 var client = contentful.createClient({
@@ -9,28 +10,37 @@ var client = contentful.createClient({
 
 const Tienda: NextPage = ({ items }: any) => {
   return (
-    <>
-      {items.map((item: any) => {
-        return <Producto key={item.nombre} data={item}></Producto>;
-      })}
-    </>
+    <div className={css.tienda}>
+      <div className={css.productos}>
+        {items.map((item: any, index: any) => (
+          <Producto key={index} data={item}></Producto>
+        ))}
+      </div>
+    </div>
   );
 };
 
 export default Tienda;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const result = await client.getEntries("producto");
   const data = result.items.map((x) => x.fields) as any[];
-
   const items = data.map((x) => ({
     ...x,
-    fotos: x.fotos.map((y: any) => y.fields.file.url),
+    fotos: x.fotos?.map((y: any) => y.fields.file.url) ?? [],
   }));
 
   return {
     props: {
-      items,
+      items: [
+        ...items,
+        // ...items,
+        // ...items,
+        // ...items,
+        // ...items,
+        // ...items,
+        // ...items,
+      ],
     },
   };
 }
