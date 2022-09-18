@@ -1,12 +1,7 @@
 import { NextPage } from "next";
-import * as contentful from "contentful";
+import appContext from "../util/context";
 import css from "./tienda.module.scss";
 import Producto from "../component/Producto";
-
-var client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE as string,
-  accessToken: process.env.CONTENTFUL_TOKEN as string,
-});
 
 const Tienda: NextPage = ({ items }: any) => {
   return (
@@ -23,24 +18,20 @@ const Tienda: NextPage = ({ items }: any) => {
 export default Tienda;
 
 export async function getServerSideProps() {
-  const result = await client.getEntries("producto");
-  const data = result.items.map((x) => x.fields) as any[];
+  const result = await appContext.getEntries("producto");
+  const data = result.items.map((x) => ({
+    ...(x.fields as any),
+    uid: x.sys.id,
+  })) as any[];
   const items = data.map((x) => ({
     ...x,
-    fotos: x.fotos?.map((y: any) => y.fields?.file?.url) ?? [],
+    fotos:
+      x.fotos
+        ?.filter((y: any) => y !== undefined)
+        .map((y: any) => `https:${y.fields?.file?.url}`) ?? [],
   }));
 
   return {
-    props: {
-      items: [
-        ...items,
-        // ...items,
-        // ...items,
-        // ...items,
-        // ...items,
-        // ...items,
-        // ...items,
-      ],
-    },
+    props: { items },
   };
 }
