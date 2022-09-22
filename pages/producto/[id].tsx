@@ -37,6 +37,7 @@ const Producto = ({ item }: any) => {
           {item.fotos.map((i: any, index: any) => {
             return (
               <img
+                key={index}
                 src={i}
                 width={80}
                 height={100}
