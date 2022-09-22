@@ -1,5 +1,5 @@
 .producto {
-  @apply flex flex-col bg-gray-50 transition-all overflow-hidden rounded;
+  @apply bg-gray-50 transition-all overflow-hidden rounded;
   border: 1px solid #eaeaea;
 
   &:hover {
@@ -7,28 +7,17 @@
   }
 }
 
-.fotos {
-  @apply w-full;
-}
-
-.contenido {
-  @apply flex flex-col gap-1 p-2;
+.contenedor {
+  @apply flex flex-col items-center gap-4 p-2;
 }
 
 .nombre {
-  @apply text-2xl text-gray-800;
+  @apply text-lg font-bold text-center p-2;
+  color: #8a2ea1;
 }
 
-.precio {
-  @apply text-lg text-green-600 font-bold;
-}
-
-.link {
-  @apply flex items-center justify-center py-1 mt-6 mb-2 mx-4 rounded-full;
-  @apply text-purple-500 text-base font-bold uppercase;
-  @apply border-2 border-purple-600;
-
-  &:hover {
-    @apply text-white bg-purple-500;
-  }
+.btn {
+  @apply text-sm text-white font-bold uppercase px-5 py-2 rounded-full cursor-pointer;
+  background-color: #ff2c7e;
+  max-width: 60%;
 }

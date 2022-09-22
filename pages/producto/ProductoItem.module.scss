@@ -1,0 +1,55 @@
+.page {
+  @apply w-full flex p-4 gap-4;
+
+  @media (max-width: 800px) {
+    @apply flex-col;
+  }
+}
+
+.galeria {
+  @apply flex-1 flex flex-col gap-2 mx-auto;
+  max-width: 600px;
+  @media (max-width: 800px) {
+    @apply w-full;
+    max-width: none;
+  }
+}
+
+.info {
+  @apply flex flex-col gap-3;
+  flex: 0 0 1;
+}
+
+.nombre {
+  @apply text-4xl text-gray-700 font-bold;
+  @media (max-width: 800px) {
+    @apply text-2xl;
+  }
+}
+
+.precio {
+  @apply text-2xl text-green-600 font-bold;
+}
+
+.descripcion {
+  @apply text-xl text-gray-400 font-light;
+}
+
+.pagos {
+  @apply text-sm font-bold;
+  color: #ff2c7e;
+}
+
+.separador {
+  @apply w-full px-3;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.form {
+  @apply flex flex-col items-start gap-2;
+}
+
+.input {
+  @apply w-full h-10 p-3 rounded-sm bg-white text-gray-600;
+  border: 1px solid #f1f1f1;
+}
