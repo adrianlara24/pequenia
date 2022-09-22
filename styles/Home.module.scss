@@ -1,3 +1,43 @@
+.home {
+  @apply flex-1 w-full flex flex-col items-center justify-center gap-4;
+  animation: anim-bg 10s linear infinite;
+  background-image: url(/bg-cloud.jpg);
+  background-size: cover;
+
+  @keyframes anim-bg {
+    0% {
+      background-position-x: 0px;
+    }
+    100% {
+      background-position-x: -100vw;
+    }
+  }
+}
+
+.home_title {
+  @apply text-8xl text-transparent font-bold text-center;
+  background-image: linear-gradient(45deg, #d83cff, #ff2c7e);
+  background-clip: text;
+
+  @media (max-width: 1000px) {
+    @apply text-6xl;
+  }
+
+  @media (max-width: 600px) {
+    @apply text-4xl;
+  }
+}
+
+.home_intro {
+  @apply text-gray-600 text-lg text-center;
+  max-width: 60%;
+
+  @media (max-width: 1000px) {
+    @apply text-sm;
+    max-width: 80%;
+  }
+}
+
 .container {
   @apply w-full h-full flex flex-col gap-4 items-center justify-center pb-2;
 
@@ -29,7 +69,7 @@
 
 .title {
   @apply text-6xl font-bold text-white text-center;
-  
+
   @media (max-width: 800px) {
     @apply text-4xl;
   }
@@ -39,7 +79,7 @@
   @apply flex items-center justify-center;
   @apply bg-white px-5 py-2 rounded-full;
   @apply text-base font-bold text-blue-700;
-  
+
   @media (max-width: 800px) {
     @apply text-xs;
   }
@@ -47,7 +87,7 @@
 
 .time {
   @apply flex justify-center gap-16 w-full;
-  
+
   @media (max-width: 800px) {
     @apply gap-2;
   }
@@ -59,7 +99,7 @@
 
 .value {
   @apply text-9xl text-center font-bold text-gray-100;
-  
+
   @media (max-width: 800px) {
     @apply text-2xl;
   }
@@ -67,7 +107,7 @@
 
 .label {
   @apply text-2xl text-center font-bold text-white;
-  
+
   @media (max-width: 800px) {
     @apply text-xs;
   }
