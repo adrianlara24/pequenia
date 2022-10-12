@@ -8,6 +8,7 @@ const Topbar = () => {
         <img className={css.logo} src="/logo.png" alt="Logo" />
         <h2 className={css.titulo}>Mi Pequeña Belen</h2>
       </div>
+      <span className={css.build}>PAGINA EN CONSTRUCCION</span>
       <div className={css.links}>
         <Link href="/">
           <a className={css.link}>Inicio</a>

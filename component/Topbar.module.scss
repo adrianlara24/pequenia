@@ -1,6 +1,7 @@
 .topbar {
-  @apply h-20 w-full;
+  @apply h-20 w-full bg-white relative;
   @apply flex items-center justify-between px-4;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 .header {
@@ -30,5 +31,15 @@
   .link {
     @apply text-base font-bold;
     color: #ff2c7e;
+  }
+}
+
+.build {
+  @apply px-2 py-1 text-white rounded-sm text-center;
+  background-color: #ff2c7e;
+  font-size: 10px;
+  @media (max-width: 600px) {
+    @apply absolute bottom-0 right-0 py-0;
+    font-size: 8px;
   }
 }
